@@ -107,7 +107,9 @@ function App() {
       return ''
     }
   }
-
+  const reStart=()=>{
+    window. location. reload(false);
+  }
 
   return (
     <div className="row">
@@ -121,10 +123,16 @@ function App() {
       <div className="control is-expanded section p-2">
         <input ref={textInput} disabled={status !== "started"} type="text" className="form-control" placeholder="Type here " onKeyDown={handleKeyDown} value={currInput} onChange={(e) => setCurrInput(e.target.value)}  />
       </div>
-      <div className="section p-2">
-        <button className="btn btn-outline-success btn-lg btn-block form-control " onClick={start}>
+      <div className='container'>
+      <div className="row justify-content-center">
+        <button className="btn btn-outline-success btn-lg col-4   " onClick={start}>
            Start
         </button>
+        <button className="btn btn-outline-success btn-lg col-4 offset-md-2  " onClick={reStart}>
+           Restart
+        </button>
+
+      </div>
       </div>
       </div>
     </div>
